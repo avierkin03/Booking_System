@@ -1,0 +1,17 @@
+<form action="{% url 'index' %}" method="post">
+    {% csrf_token %}
+    <label for="start_date">Дата заїзду</label>
+    <input type="date" name="start_date" value="{{ start_date }}" id="start_date" required>
+        
+    <label for="end_date">Дата виїзду</label>
+    <input type="date" name="end_date" value="{{ end_date }}" id="end_date" required>
+        
+    <label for="quantity">Кількість осіб:</label>
+    <input type="number" name="quantity" value="{{ quantity }}" min="1" max="12" id="quantity">
+       
+    <label class="form-label">Ціна:</label>
+    <input  type="number" name="price_from" value="{{ price_from }}" placeholder="від"  min="1">
+    <input  type="number" name="price_to" value="{{ price_to }}" placeholder="до"  min="1">
+          
+    <button type="submit">Пошук</button>
+</form>
