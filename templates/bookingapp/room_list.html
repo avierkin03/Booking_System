@@ -1,15 +1,5 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Наші номери</h1>
-
-    {% for room in rooms %}
-        <img src="{{ room.image.url }}">
-        <h5> {{ room.number }} - {{ room.category.title }}</h5>
-        <p>Місць: {{room.capacity}}</p>
-        <p>{{room.location}}</p>
-        <p>{{ room.price }} грн. <a href="">Забронювати</a></p>
-
-    {% endfor %}
-
+    {% include 'bookingapp/rooms.html'%}
 {% endblock %}
