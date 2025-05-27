@@ -1,1 +1,3 @@
-booking/__pycache__/
+booking/__pycache__
+booking/migrations/__pycache__
+booking_system/__pycache__
