@@ -1,5 +1,5 @@
 <nav>
-    <a href="#">BookingApp</a>
+    <a href="{% url 'index' %}">BookingApp</a>
       <ul>
         <li>
           <a href="{% url 'index' %}">Пошук номера</a>
@@ -8,7 +8,7 @@
           <a href="{% url 'rooms' %}">Наші номери</a>
         </li>
         <li>
-          <a href="#">Про нас</a>
+          <a href="{% url 'about' %}">Про нас</a>
         </li>
       </ul>
 </nav>
