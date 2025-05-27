@@ -80,3 +80,8 @@ def book_room(request):
         'end_date': end_date,
     }
     return render(request, template_name="bookingapp/booking.html", context=context)
+
+
+# функція представення сторінки "Про нас"
+def about_view(request):
+    return render(request, 'bookingapp/about.html')
