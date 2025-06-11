@@ -23,4 +23,5 @@ from booking_system import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('booking.urls')),
+    path('', include('auth_system.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

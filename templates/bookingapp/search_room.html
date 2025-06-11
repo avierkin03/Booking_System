@@ -1,10 +1,10 @@
 <form action="{% url 'index' %}" method="post">
     {% csrf_token %}
     <label for="start_date">Дата заїзду</label>
-    <input type="date" name="start_date" value="{{ start_date }}" id="start_date" required>
+    <input type="date" name="start_date" value="{{ start_date }}" id="start_date" min="{% now 'Y-m-d' %}" required>
         
     <label for="end_date">Дата виїзду</label>
-    <input type="date" name="end_date" value="{{ end_date }}" id="end_date" required>
+    <input type="date" name="end_date" value="{{ end_date }}" id="end_date" min="{% now 'Y-m-d' %}" required>
         
     <label for="quantity">Кількість осіб:</label>
     <input type="number" name="quantity" value="{{ quantity }}" min="1" max="12" id="quantity">

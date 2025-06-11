@@ -358,3 +358,18 @@ footer {
         margin-top: 10px;
     }
 }
+
+.messages li.success {
+    color: green;
+    background-color: #e6ffe6;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid green;
+}
+.messages li.error {
+    color: red;
+    background-color: #ffe6e6;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid red;
+}

@@ -10,5 +10,15 @@
         <li>
           <a href="{% url 'about' %}">Про нас</a>
         </li>
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'booking_history' %}">Мої бронювання</a></li>
+        {% endif %}
+        <li>
+          {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Вийти ({{ user.username }})</a>
+          {% else %}
+              <a href="{% url 'login' %}">Увійти</a>
+          {% endif %}
+        </li>
       </ul>
 </nav>

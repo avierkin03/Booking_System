@@ -2,23 +2,37 @@
 
 {% block content %}
     <h1>Бронювання</h1>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
     <form action="" method="post">
         {% csrf_token %}
+        <input type="hidden" name="room_id" value="{{ room_id }}">
+
         <label for="start_date">Дата заїзду</label>
-        <input type="date" name="start_date" value="{{ start_date }}" id="start_date" required>
+        <input type="date" name="start_date" value="{{ start_date|default_if_none:'' }}" id="start_date" required min="{% now 'Y-m-d' %}">
                     
         <label for="end_date">Дата виїзду</label>
-        <input type="date" name="end_date" value="{{ end_date }}" required>
-                    
-        <label for="phone">Введіть контактний номер телефону:</label>
-        <input name="phone" type="tel" required>
-                    
+        <input type="date" name="end_date" value="{{ end_date|default_if_none:'' }}" id="end_date" required>
+
         <button type="submit">Submit</button>
     </form>
        
-    <img src="{{ room.image.url }}">
-    
-    <h5> {{ room.number }} - {{ room.category }}</h5>
-    <p>Місць: {{room.capacity}}</p>
-    <p>{{room.location}}</p>
+  
+    <img src="{{ room.image.url }}" alt="Room {{ room.number }}">
+    <h5>Кімната №{{ room.number }} - {{ room.category.title }}</h5>
+    <p>Місць: {{ room.capacity }}</p>
+    <p>{{ room.location }}</p>
+    <p>Вартість: {{ room.price }} грн.</p>
+
+    <script>
+        document.getElementById('start_date').addEventListener('change', function() {
+            const startDate = this.value;
+            document.getElementById('end_date').min = startDate;
+        });
+    </script>
 {% endblock %}

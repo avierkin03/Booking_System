@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 
 # модель категорії
 class Category(models.Model):
@@ -34,7 +34,7 @@ class Room(models.Model):
 
 # модель бронювання
 class Booking(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bookings")
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="bookings")
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="bookings")
     start_time = models.DateField()
     end_time = models.DateField()
