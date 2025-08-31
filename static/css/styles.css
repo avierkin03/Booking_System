@@ -1,10 +1,17 @@
 /* Загальні стилі */
+html {
+    height: 100%;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f7f9;
     color: #333;
+    min-height: 100%;
+    position: relative; /* Додаємо relative для позиціонування футера */
+    padding-bottom: 150px; /* Відступ знизу, щоб контент не перекривав футер */
 }
 
 /* Стилі для header */
@@ -166,6 +173,26 @@ button[type="submit"]:hover {
     color: #e67e22;
 }
 
+/* Стилі для сторінки бронювання */
+.room-details {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column; /* Вертикальне розташування елементів */
+    gap: 20px;
+   
+}
+
+.room-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
 /* Стилі для сторінки "Про нас" */
 .about-section, .mission-section, .team-section {
     background-color: white;
@@ -296,7 +323,9 @@ footer {
     background-color: #2c3e50;
     color: #fff;
     padding: 35px 0 20px 0;
-    margin-top: 50px;
+    position: absolute; /* Фіксуємо футер унизу */
+    bottom: 0; /* Приліплюємо до нижньої межі */
+    width: 100%; /* Повна ширина */
 }
 
 .footer-container {

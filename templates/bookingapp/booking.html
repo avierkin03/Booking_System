@@ -9,6 +9,16 @@
             {% endfor %}
         </ul>
     {% endif %}
+    
+    <div class="room-details">
+        <img src="{{ room.image.url }}" alt="Кімната №{{ room.number }}" class="room-image">
+        <h3>Кімната №{{ room.number }} - {{ room.category.title }}</h3>
+        <p>Місць: {{ room.capacity }}</p>
+        <p>{{ room.location }}</p>
+        <p>Вартість: {{ room.price }} грн.</p>
+                
+    </div>
+
     <form action="" method="post">
         {% csrf_token %}
         <input type="hidden" name="room_id" value="{{ room_id }}">
@@ -19,15 +29,8 @@
         <label for="end_date">Дата виїзду</label>
         <input type="date" name="end_date" value="{{ end_date|default_if_none:'' }}" id="end_date" required>
 
-        <button type="submit">Submit</button>
+        <button type="submit">Забронювати</button>
     </form>
-       
-  
-    <img src="{{ room.image.url }}" alt="Room {{ room.number }}">
-    <h5>Кімната №{{ room.number }} - {{ room.category.title }}</h5>
-    <p>Місць: {{ room.capacity }}</p>
-    <p>{{ room.location }}</p>
-    <p>Вартість: {{ room.price }} грн.</p>
 
     <script>
         document.getElementById('start_date').addEventListener('change', function() {

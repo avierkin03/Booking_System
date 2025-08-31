@@ -6,9 +6,9 @@
             <h3> {{ room.number }} - {{ room.category.title }}</h3>
             <p>Місць: {{ room.capacity }}</p>
             <p>{{ room.location }}</p>
-            {% if filtered %}
+         
                 <p>Ціна: {{ room.price }} грн. <a href="{% url 'booking'  %}?room_id={{ room.id }}&start_date={{ start_date }}&end_date={{ end_date }}">Забронювати</a></p>
-            {% endif %}
+            
             <br>
         </div>
     {% endfor %}

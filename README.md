@@ -105,6 +105,22 @@ This is a Django-based web application designed for hotel room booking. It allow
 4. **View Booking History**: Check past and upcoming bookings in the history section.
 5. **Admin Access**: Use the admin panel to manage users, rooms, categories, and bookings.
 
+## Screenshots
+
+Below are screenshots showcasing key pages of the Hotel Room Booking System:
+
+| Main Page | Booking Page |
+|-----------|--------------|
+| ![Main Page](screenshots/main_page.png) | ![Booking Page](screenshots/booking_page.png) |
+
+| Booking History | About Us Page |
+|-----------------|---------------|
+| ![Booking History](screenshots/booking_history.png) | ![About Us Page](screenshots/about_us_page.png) |
+
+| Login Page |
+|------------|
+| ![Login Page](screenshots/login_page.png) |
+
 ## Future Improvements
 
 - Add frontend styling with CSS frameworks (e.g., Bootstrap, Tailwind).
